@@ -7,7 +7,7 @@ function CartProd({ eachCurrentSale }) {
         <img src={eachCurrentSale.img} alt={eachCurrentSale.name} />
       </div>
       <div className="container__prodCarrinho--info">
-        <h3>{eachCurrentSale.name}</h3>
+        <h4>{eachCurrentSale.name}</h4>
         <span>{eachCurrentSale.category}</span>
       </div>
       <div className="container__prodCarrinho--remover">

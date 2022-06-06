@@ -46,18 +46,30 @@ function App() {
     setCurrentSale([...currentSale, findProd]);
   }
 
+  // aparecer  oq esta prcurando
+  const [valueSearch, setValueSearch] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
-        <Header handleFilter={handleFilter} />
+        <Header handleFilter={handleFilter} setValueSearch={setValueSearch} />
       </header>
       <main>
-        {filteredProducts.length <1 ? (
+        {filteredProducts.length < 1 ? (
           <ProductList products={products} handleClick={handleClick} />
         ) : (
-          <ProductList products={filteredProducts} handleClick={handleClick} />
+          <>
+            <ProductList
+              products={filteredProducts}
+              handleClick={handleClick}
+            />
+          </>
         )}
-        <Cart currentSale={currentSale} cartTotal={cartTotal} />
+        <Cart
+          currentSale={currentSale}
+          cartTotal={cartTotal}
+          setCurrentSale={setCurrentSale}
+        />
       </main>
     </div>
   );
